@@ -29,6 +29,15 @@ let state = {
   haste: 1,
 }
 
+if (document.cookie.length > 0)
+  state = JSON.parse(document.cookie.substring(6))
+
+function save() {
+  document.cookie = "state="+JSON.stringify(state)
+  console.log(document.cookie)
+  console.log(JSON.stringify(state))
+}
+
 function update() {
 
   state.food += state.cats * TIMESTEP * state.haste
@@ -55,23 +64,27 @@ function init() {
   let btn_haste = document.getElementById("btn_execute")
   
   btn_scavenge.onclick = () => {
-  	state.food += scavengeAmount()
+    state.food += scavengeAmount()
+    save()
   }
   
   btn_adopt.onclick = () => {
-  	let cost = catCost()
-  	if (state.food < cost) return
-  	state.food -= cost
+    let cost = catCost()
+    if (state.food < cost) return
+    state.food -= cost
     state.cats ++
+    save()
   }
   
   btn_haste.onclick = () => {
   	if (state.cats < 1) return
     state.cats --
     state.haste += .01
+    save()
   }
 
-	setInterval(update, 1000 * TIMESTEP)
+  setInterval(update, 1000 * TIMESTEP)
+  setInterval(save, 10 * 1000)
 }
 
 document.onload = init()
