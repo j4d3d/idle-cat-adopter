@@ -1,0 +1,33 @@
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.shop div * {
+  margin: .5em;
+  border-radius: 1em;
+  width: 100%;
+}
+
+.shop button {
+  padding: 1em;
+  background: #aaffaa;  
+  width: 100%;
+}
+
+.shop .tooltip {
+  color: #666666;
+}
+
+.commodities {
+  font-size: 2em;
+  gap: 1.5em;
+  padding: 1em;
+}

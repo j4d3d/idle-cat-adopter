@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" href="index.css"></link>
+</head>
+<body>
+
+
+<div class="flexRow">
+
+<div class="flexCol" style="display:flex">
+  <h1>Idle Cat Patter</h1>
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"></img>
+</div>
+
+<div class="flexCol">
+  <div class="flexRow commodities">
+    <div>Food: <span id="lbl_food">0</span></div>
+    <div>Cats: <span id="lbl_cats">0</span></div>
+    <div>Haste: <span id="lbl_haste">0</span></div>
+  </div>
+
+  <div class="shop">
+    <div class="flexCol">
+      <div>
+          <button id="btn_scavenge">Scavenge</button>
+          <label>Go looking for<span id="amt_scavenge">50</span>food.</label>
+          <div class="tooltip">Additional 0.1 food per cat.</div>
+      </div>
+      <div>
+          <button id="btn_adopt">Adopt</button>
+          <label>Adopt 1 cat for<span id="cost_cat">50</span>food.</label>
+          <div class="tooltip">Cost multiplies x1.5 for each cat.</div>
+          <div class="tooltip">Each cat generates 0.01 food per second.</div>
+      </div>
+      <div>
+          <button id="btn_execute">Motivate</button>
+          <label>+.01 haste, -1 cat.</label>
+          <div class="tooltip">Haste increases idle food production.</div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
