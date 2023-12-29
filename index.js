@@ -27,15 +27,20 @@ let state = {
   food: 50,
   cats: 0,
   haste: 1,
+  time: Date.now()
 }
 
-if (document.cookie.length > 0)
+if (document.cookie.length > 0) {
   state = JSON.parse(document.cookie.substring(6))
+  let elapsed = (Date.now() - state.time) / 1000
+  let growth = state.cats * state.haste * elapsed
+  console.log(elapsed+" seconds have elapsed, resulting in "+growth+" food.")
+  state.food += growth
+}
 
 function save() {
+  state.time = Date.now()
   document.cookie = "state="+JSON.stringify(state)
-  console.log(document.cookie)
-  console.log(JSON.stringify(state))
 }
 
 function update() {
