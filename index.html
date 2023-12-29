@@ -10,16 +10,22 @@
 <div class="flexCol" style="display:flex">
   <h1>Idle Cat Patter</h1>
   <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"></img>
+  <div class="flexRow">
+    <button id="btn_catHouse">Cat House</button>
+  </div>
+  <div class="flexRow">
+    <button id="btn_research">Research</button>
+  </div>
 </div>
 
-<div class="flexCol">
+<div class="flexCol" style="width:100%">
   <div class="flexRow commodities">
     <div>Food: <span id="lbl_food">0</span></div>
     <div>Cats: <span id="lbl_cats">0</span></div>
     <div>Haste: <span id="lbl_haste">0</span></div>
   </div>
 
-  <div class="shop">
+  <div class="shop" id="div_catHouse">
     <div class="flexCol">
       <div>
           <button id="btn_scavenge">Scavenge</button>
@@ -30,12 +36,23 @@
           <button id="btn_adopt">Adopt</button>
           <label>Adopt 1 cat for<span id="cost_cat">50</span>food.</label>
           <div class="tooltip">Cost multiplies x1.5 for each cat.</div>
-          <div class="tooltip">Each cat generates 0.01 food per second.</div>
+          <div class="tooltip">Each cat generates 1 food per second.</div>
       </div>
       <div>
           <button id="btn_execute">Motivate</button>
-          <label>+.01 haste, -1 cat.</label>
+	  <label>Motivate your cats to work faster.</label>
+          <div class="tooltip">+.01 haste, -1 cat.</div>
           <div class="tooltip">Haste increases idle food production.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="shop" id="div_research">
+    <div class="flexCol">
+      <div>
+          <button id="btn_research_0">Cat Multiplier</button>
+          <label>Your cats start multiplying on their own.</label>
+          <div class="tooltip">Additional 0.1 cats per cat.</div>
       </div>
     </div>
   </div>
