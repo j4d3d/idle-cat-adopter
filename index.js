@@ -43,9 +43,14 @@ function save() {
   document.cookie = "state="+JSON.stringify(state)
 }
 
+let lastTime = Date.now()
 function update() {
 
-  state.food += state.cats * TIMESTEP * state.haste
+  let time = Date.now()
+  let since = (time - lastTime) / 1000
+  lastTime = time
+
+  state.food += state.cats * since * state.haste
 
   lbl_food.innerText = state.food.toFixed(1)
   lbl_cats.innerText = state.cats
